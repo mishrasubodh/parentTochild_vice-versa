@@ -1,0 +1,10 @@
+<div class="mainParentDiv">
+    <div class="parentMain">
+        <h2>parent page</h2>
+        <h3> data coming from child page:- </h3> <p>{{fromChild}}</p>
+        <input type="text" class="input" [(ngModel)]="parentString">
+        <button class="button" (click)="parentToChild()">sendToChild</button>
+        <button class="button danger" (click)="cleartext()">clearTextOnParent</button>
+    </div>
+    <app-child [parentTOchild]="parentTOChildMsg" (childToParent) ="GetChildData($event)"></app-child>
+</div>
